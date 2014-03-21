@@ -81,7 +81,8 @@ public class SequenceDetector {
         while (frame.isVisible()
                 && (grabbedImage = opencv_highgui.cvQueryFrame(capture))
                 != null
-                && currentSystemState != SystemState.SEQUENCE_DETECTED) {
+//                && currentSystemState != SystemState.SEQUENCE_DETECTED
+                ) {
 
             // Clear out storage 
 //            cvClearMemStorage(faceStorage);

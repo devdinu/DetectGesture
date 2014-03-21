@@ -11,12 +11,12 @@ import static com.googlecode.javacv.cpp.opencv_objdetect.*;
 import com.googlecode.javacpp.Loader;
 import com.googlecode.javacpp.Pointer;
 import com.googlecode.javacv.CanvasFrame;
-import com.googlecode.javacv.cpp.opencv_core;
 import com.googlecode.javacv.cpp.opencv_core.CvScalar;
 import com.googlecode.javacv.cpp.opencv_highgui;
 import com.googlecode.javacv.cpp.opencv_highgui.CvCapture;
 import com.googlecode.javacv.cpp.opencv_objdetect;
 import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
+
 import java.awt.Point;
 import java.util.ArrayList;
 
@@ -53,14 +53,16 @@ public class SequenceDetector {
         // and the lower resolution will make our real-time video 
         // processing a little faster.    
         opencv_highgui.cvSetCaptureProperty(capture,
-                opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT, 520);
+                opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT, Configurations.HEIGHT);
         opencv_highgui.cvSetCaptureProperty(capture,
-                opencv_highgui.CV_CAP_PROP_FRAME_WIDTH, 520);
+                opencv_highgui.CV_CAP_PROP_FRAME_WIDTH, Configurations.WIDTH);
 
         // Contruct a JavaCV Image that matches the properties of the 
         // captured imaged.    
         IplImage grabbedImage = opencv_highgui.cvQueryFrame(capture);
         IplImage mirrorImage = grabbedImage.clone();
+
+        IplImage grabbedColorImage = null, mirrorColorImage = null;
         IplImage grayImage = IplImage.create(mirrorImage.width(),
                 mirrorImage.height(), IPL_DEPTH_8U, 1);
 
@@ -108,9 +110,15 @@ public class SequenceDetector {
               
             // display mirrorImage on frame
             frame.showImage(mirrorImage);
+            grabbedColorImage = opencv_highgui.cvQueryFrame(capture);
         }
 
 
+
+
+        new PhotoCapturer().capture(grabbedImage,"grabbed");
+        new PhotoCapturer().capture(mirrorImage,"mirror");
+        new PhotoCapturer().capture(grabbedColorImage,"grabbedColor");
 
         // display captured image on frame
         frame.dispose();

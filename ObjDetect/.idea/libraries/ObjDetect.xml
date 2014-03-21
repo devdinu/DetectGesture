@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="ObjDetect">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/ObjDetect.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -26,42 +26,17 @@ import java.io.PrintWriter;
  */
 public class PhotoCapturer {
 
-    public static void capture()
+    public void capture(opencv_core.IplImage iplImage,String fileName)
     {
 
-        OpenCVFrameGrabber frameGrabber = new OpenCVFrameGrabber(0);
-        try {
-            frameGrabber.start();
-        } catch (FrameGrabber.Exception e) {
-            e.printStackTrace();
-        }
-
-        CanvasFrame canvasFrame = new CanvasFrame("Detect Sequence");
-        canvasFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        while (canvasFrame.isShowing())
-        {
-            opencv_core.IplImage image = null;
+        BufferedImage capturedImage= new BufferedImage(Configurations.WIDTH,Configurations.HEIGHT,BufferedImage.TYPE_INT_RGB);
+        iplImage.copyTo(capturedImage);
             try {
-                image = frameGrabber.grab();
-            } catch (FrameGrabber.Exception e) {
-                e.printStackTrace();
-            }
-
-            if(image!=null) canvasFrame.showImage(image);
-            BufferedImage capturedImage = image.getBufferedImage();
-
-            try {
-                ImageIO.write(capturedImage, "png", new File("savedImage"));
+                ImageIO.write(capturedImage, "png", new File(fileName));
             } catch (IOException e) {
                 e.printStackTrace();
 
             }
-        }
     }
 
-
-
-    public static void main(String[] args) {
-        capture();
-    }
 }

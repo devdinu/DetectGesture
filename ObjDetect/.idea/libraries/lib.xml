@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-linux-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-linux-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-android-arm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-android-arm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-linux-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-macosx-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacpp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-macosx-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/javacv-windows-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-windows-x86_64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/opencv-2.4.5-linux-x86_64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

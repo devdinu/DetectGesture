@@ -11,6 +11,7 @@ import static com.googlecode.javacv.cpp.opencv_objdetect.*;
 import com.googlecode.javacpp.Loader;
 import com.googlecode.javacpp.Pointer;
 import com.googlecode.javacv.CanvasFrame;
+import com.googlecode.javacv.cpp.opencv_core;
 import com.googlecode.javacv.cpp.opencv_core.CvScalar;
 import com.googlecode.javacv.cpp.opencv_highgui;
 import com.googlecode.javacv.cpp.opencv_highgui.CvCapture;
@@ -30,7 +31,7 @@ public class SequenceDetector {
         SEQUENCE_DETECTED,
         FIST_DETECTED,
         PALM_DETECTED,}
-    public static ArrayList<Character> sequenceOfGestures = new ArrayList<>();
+    public static ArrayList<Character> sequenceOfGestures = new ArrayList<Character>();
 
     public void detect() {
 
@@ -108,6 +109,8 @@ public class SequenceDetector {
             // display mirrorImage on frame
             frame.showImage(mirrorImage);
         }
+
+
 
         // display captured image on frame
         frame.dispose();
